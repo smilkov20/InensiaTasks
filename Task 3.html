@@ -1,0 +1,47 @@
+﻿<html>
+<head>
+    <script>
+        /** Example button : <button type="button" onclick="GetElementsInsideContainer('row')">GetElements for 'row' id</button>
+         * The function returns array with the given element and all its children.
+         * In addition I added 'console.log(elm)' to check the array easier with the console and div at the end of the page that is filled with returned data.
+         */
+		function GetElementsInsideContainer(containerID) {
+			var elm = [];
+            elm.push(document.getElementById(containerID));
+            var elms = document.getElementById(containerID).getElementsByTagName("*");
+            document.getElementById("demo").innerHTML = null;
+			for (var i = 0; i < elms.length; i++) {
+                elm.push(elms[i]);
+            }
+            console.log(elm);
+			return elm;
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="GetElementsInsideContainer('row')">GetElements for 'row' id</button>
+    <button type="button" onclick="GetElementsInsideContainer('bottomMenu')">GetElements for 'bottomMenu' id</button>
+    <h1>Sample page</h1>
+
+    <div id="row">
+        <div id="col1">
+            <h2>Section 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ipsum quam, condimentum ac pulvinar sed, luctus sed libero. Vestibulum vestibulum sodales tellus, sit amet placerat nulla venenatis non. Nunc facilisis est eget facilisis sollicitudin. Proin placerat mi eget consequat congue. </p>
+            <p>Pellentesque finibus convallis magna, in convallis sapien fermentum id. Quisque rutrum sapien at sagittis sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum a interdum felis. Vestibulum ac nunc vel turpis posuere venenatis a eu arcu. Morbi vulputate massa sit amet dui consectetur efficitur. Phasellus a lobortis enim. Mauris hendrerit consectetur orci eget scelerisque.</p>
+        </div>
+        <div id="col2">
+            <h2>Section1</h2>
+            <p><a href="#">Lipsum dolor</a> sit amet, consectetur adipiscing elit. Nunc ipsum quam, condimentum ac pulvinar sed, luctus sed libero. Vestibulum vestibulum sodales tellus, sit amet placerat nulla venenatis non. Nunc facilisis est eget facilisis sollicitudin. Proin placerat mi eget consequat congue. </p>
+            <p>Pellentesque finibus convallis magna, in convallis sapien fermentum id. Quisque rutrum sapien at sagittis sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum a interdum felis. Vestibulum ac nunc vel turpis posuere venenatis a eu arcu. Morbi vulputate massa sit amet dui consectetur efficitur. Phasellus a lobortis enim. Mauris hendrerit consectetur orci eget scelerisque.</p>
+        </div>
+    </div>
+    <footer>
+        <ul id="bottomMenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </footer>
+
+    <div id="demo"></div>
+</body>
+</html>
